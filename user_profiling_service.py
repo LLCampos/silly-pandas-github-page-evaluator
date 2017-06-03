@@ -1,10 +1,6 @@
-from flask import Flask, request, redirect, url_for, render_template, flash
-#from flask_login import login_user, logout_user, current_user, login_required, LoginManager
+from flask import Flask, request, render_template
 import os
 from User import User
-#import models
-
-import github3
 
 
 # grabs the folder where the script runs
@@ -18,11 +14,6 @@ SECRET_KEY = 'secret_key'
 app = Flask(__name__)
 app.config.from_object(__name__)
 
-gh = github3.GitHub()
-
-#@app.route('/')
-#def index():
-#    return render_template('index.html')
 
 @app.route('/', methods=['GET', 'POST'])
 def profile_user():
@@ -32,9 +23,6 @@ def profile_user():
         username = request.form.get('username')
         user = User(username)
         return render_template('profile.html', user=user)
-
-
-
 
 
 if __name__ == '__main__':

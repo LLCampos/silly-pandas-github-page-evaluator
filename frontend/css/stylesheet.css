@@ -1,3 +1,53 @@
 .navbar {
     border-radius: 0;
 }
+
+#personal-user-info {
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+#profile-pic img {
+    width: 100%;
+}
+
+#realname {
+    margin: 0;
+}
+
+#username {
+    margin: 0;
+    color: #666;
+    margin-bottom: 1em;
+}
+
+.glyphicon-user-personal-info {
+    margin-right: 0.5em;
+}
+
+.general-info-datum-title {
+    font-size: 1.5em;
+    font-weight: 900;
+}
+
+.programming-language-info {
+    margin-top: 0.5em;
+}
+
+.programming-language-info-title {
+    font.size: 1.5em;
+    font-weight: 900;
+}
+
+.programming-language-info-title-additions {
+    color: #006400;
+}
+
+.programming-language-info-title-deletions {
+    color: #8B0000;
+}
+
+.language-repo-list {
+    list-style-type: none;
+    padding: 0;
+}

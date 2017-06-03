@@ -27,7 +27,40 @@
         <button type="submit" class="btn btn-primary">Profile this dev! </button>
     </form>
 
-    <div>
+    <div id="personal-user-info">
+      <div class="row">
+        <div class="col-md-3">
+          <div id="profile-pic">
+            <img src="https://avatars2.githubusercontent.com/u/12008784?v=3&s=460">
+          </div>
+        </div>
+        <div class="col-md-3">
+          <h1 id="realname">Luís Campos</h2>
+          <h2 id="username">LLCampos</h2>
+
+          <div id="user_location"><span class="glyphicon glyphicon-map-marker glyphicon-user-personal-info"></span>Portugal</div>
+          <div id="user_email"><span class="glyphicon glyphicon-envelope glyphicon-user-personal-info"></span>luis1212@sapo.pt</div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row" id="general-user-info">
+      <div class="col-md-4 text-center general-info-datum">
+        <div class="row general-info-datum-title">Accepted Pull Requests</div>
+        <div class="row general-info-datum-number">4</div>
+      </div>
+      <div class="col-md-4 text-center general-info-datum">
+        <div class="row general-info-datum-title">Issues Created</div>
+        <div class="row general-info-datum-number">23</div>
+      </div>
+      <div class="col-md-4 text-center general-info-datum">
+        <div class="row general-info-datum-title">Repositories Number</div>
+        <div class="row general-info-datum-number">54</div>
+      </div>
+    </div>
+
+    <div id="progamming-languages-info">
       <h3>Programming Languages</h3>
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <div class="panel panel-default">
@@ -40,38 +73,106 @@
           </div>
           <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
             <div class="panel-body">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+
+              <div class="row programming-language-info-addition-deletions">
+                <div class="col-md-6 text-center programming-language-info">
+                  <div class="row programming-language-info-title programming-language-info-title-additions">Total Additions</div>
+                  <div class="row programming-language-info-number">4</div>
+                </div>
+                <div class="col-md-6 text-center programming-language-info">
+                  <div class="row programming-language-info-title programming-language-info-title-deletions">Total Deletions</div>
+                  <div class="row programming-language-info-number">23</div>
+                </div>
+              </div>
+
+              <div class="row programming-language-info-repo-list">
+                <div class="col-md-12 text-center programming-language-info">
+                  <div class="row programming-language-info-title">Examples of Repositories</div>
+                  <ul class="language-repo-list">
+                    <li><a href="#">pybioportal</a></li>
+                    <li><a href="#">SputnikArtistSearcher </a></li>
+                    <li><a href="#">pybioportal</a></li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
+
+
         <div class="panel panel-default">
           <div class="panel-heading" role="tab" id="headingTwo">
             <h4 class="panel-title">
-              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                 Java
               </a>
             </h4>
           </div>
           <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
             <div class="panel-body">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+
+              <div class="row programming-language-info-addition-deletions">
+                <div class="col-md-6 text-center programming-language-info">
+                  <div class="row programming-language-info-title programming-language-info-title-additions">Total Additions</div>
+                  <div class="row programming-language-info-number">4</div>
+                </div>
+                <div class="col-md-6 text-center programming-language-info">
+                  <div class="row programming-language-info-title programming-language-info-title-deletions">Total Deletions</div>
+                  <div class="row programming-language-info-number">23</div>
+                </div>
+              </div>
+
+              <div class="row programming-language-info-repo-list">
+                <div class="col-md-12 text-center programming-language-info">
+                  <div class="row programming-language-info-title">Examples of Repositories</div>
+                  <ul class="language-repo-list">
+                    <li><a href="#">pybioportal</a></li>
+                    <li><a href="#">SputnikArtistSearcher </a></li>
+                    <li><a href="#">pybioportal</a></li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
         <div class="panel panel-default">
           <div class="panel-heading" role="tab" id="headingThree">
             <h4 class="panel-title">
-              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                 CSS
               </a>
             </h4>
           </div>
           <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
             <div class="panel-body">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+
+              <div class="row programming-language-info-addition-deletions">
+                <div class="col-md-6 text-center programming-language-info">
+                  <div class="row programming-language-info-title programming-language-info-title-additions">Total Additions</div>
+                  <div class="row programming-language-info-number">4</div>
+                </div>
+                <div class="col-md-6 text-center programming-language-info">
+                  <div class="row programming-language-info-title programming-language-info-title-deletions">Total Deletions</div>
+                  <div class="row programming-language-info-number">23</div>
+                </div>
+              </div>
+
+              <div class="row programming-language-info-repo-list">
+                <div class="col-md-12 text-center programming-language-info">
+                  <div class="row programming-language-info-title">Examples of Repositories</div>
+                  <ul class="language-repo-list">
+                    <li><a href="#">pybioportal</a></li>
+                    <li><a href="#">SputnikArtistSearcher </a></li>
+                    <li><a href="#">pybioportal</a></li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
     </div>
 

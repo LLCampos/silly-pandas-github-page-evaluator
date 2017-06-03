@@ -56,7 +56,7 @@ class User:
         for repo in self.repositories:
             languages = repo.languages
             if language in languages:
-                lang_repos.append(dict([(repo.name, repo.url, repo.)]))
+                lang_repos.append(dict([(repo.name, repo.url)]))
         return lang_repos
 
     def count_issues(self):

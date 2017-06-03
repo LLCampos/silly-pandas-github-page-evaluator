@@ -229,7 +229,7 @@ class FilenameToLanguage:
             ("y", "yacc"),
             ("yaml", "YAML"),
             ("yml", "YAML")])
-        self.language = self.get_language()
+        self.language = self.language()
 
     @staticmethod
     def file_extension(filename):
@@ -237,5 +237,5 @@ class FilenameToLanguage:
         return file_extension
 
     def language(self):
-        file_extension = self.get_file_extension(self.filename)
+        file_extension = self.file_extension(self.filename)
         return self.extensions.get(file_extension)

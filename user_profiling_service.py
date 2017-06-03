@@ -1,7 +1,8 @@
 from flask import Flask, request, redirect, url_for, render_template, flash
-from flask_login import login_user, logout_user, current_user, login_required, LoginManager
+#from flask_login import login_user, logout_user, current_user, login_required, LoginManager
 import os
-import models
+from User import User
+#import models
 
 import github3
 
@@ -19,13 +20,19 @@ app.config.from_object(__name__)
 
 gh = github3.GitHub()
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+#@app.route('/')
+#def index():
+#    return render_template('index.html')
 
-@app.route('/submit', methods=['GET', 'POST'])
-def profile_user(username):
-    return redirect(url_for('index'))
+@app.route('/', methods=['GET', 'POST'])
+def profile_user():
+    if request.method == 'GET':
+        return render_template('index.html')
+    elif request.method == 'POST':
+        username = request.form.get('username')
+        user = User(username)
+        return render_template('profile.html', user=user)
+
 
 
 

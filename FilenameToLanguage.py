@@ -48,14 +48,14 @@ class FilenameToLanguage:
             ("csh", "C Shell"),
             ("tcsh", "C Shell"),
             ("cs", "C#"),
-            ("C", "C++"),
-            ("cc", "C++"),
-            ("cpp", "C++"),
-            ("cxx", "C++"),
-            ("pcc", "C++"),
-            ("h", "C/C++ Header"),
-            ("hh", "C/C++ Header"),
-            ("hpp", "C/C++ Header"),
+            ("C", "Cplusplus"),
+            ("cc", "Cplusplus"),
+            ("cpp", "Cplusplus"),
+            ("cxx", "Cplusplus"),
+            ("pcc", "Cplusplus"),
+            ("h", "C-Cplusplus Header"),
+            ("hh", "C-Cplusplus Header"),
+            ("hpp", "C-Cplusplus Header"),
             ("ccs", "CCS"),
             ("clj", "Clojure"),
             ("cljs", "ClojureScript"),
@@ -135,7 +135,7 @@ class FilenameToLanguage:
             ("mxml", "MXML"),
             ("build", "NAnt scripts"),
             ("dmap", "NASTRAN DMAP"),
-            ("mm", "Objective C++"),
+            ("mm", "Objective Cplusplus"),
             ("ml", "OCaml or ML"),
             ("mli", "OCaml or ML"),
             ("mll", "OCaml"),
@@ -180,7 +180,7 @@ class FilenameToLanguage:
             ("scala", "Scala"),
             ("sed", "sed"),
             ("il", "SKILL"),
-            ("ils", "SKILL++"),
+            ("ils", "SKILLplusplus"),
             ("smarty", "Smarty"),
             ("tpl", "Smarty"),
             ("sbl", "Softbridge Basic"),
@@ -199,8 +199,6 @@ class FilenameToLanguage:
             ("met", "Teamcenter met"),
             ("mth", "Teamcenter mth"),
             ("tex", "Tex"),
-            ("md", "Text"),
-            ("txt", "Text"),
             ("vala", "Vala"),
             ("vapi", "Vala Header"),
             ("sv", "Verilog-SystemVerilog"),
@@ -233,9 +231,9 @@ class FilenameToLanguage:
 
     @staticmethod
     def file_extension(filename):
-        _ , file_extension = os.path.splitext(filename)
+        _, file_extension = os.path.splitext(filename)
         return file_extension
 
     def language(self):
         file_extension = self.file_extension(self.filename)
-        return self.extensions.get(file_extension)
+        return self.extensions.get(file_extension[1:])

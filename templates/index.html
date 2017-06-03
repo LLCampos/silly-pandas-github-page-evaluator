@@ -19,95 +19,15 @@
 
   <div class="container">
 
-    <form>
+    <form action="" method="post">
       <div class="form-group">
+
         <label for="user-profile-url-input">User Profile</label>
-        <input type="url" class="form-control" id="user-profile-url-input" placeholder="Enter user profile">
+        <input type="text" class="form-control"  name="username" value="{{ request.form.username }}" id="user-profile-url-input" placeholder="Enter user profile">
       </div>
         <button id="submit-profile-user" type="submit" class="btn btn-primary">Profile this dev! </button>
     </form>
-
-    <div id="personal-user-info" class="hidden">
-      <div class="row">
-        <div class="col-md-3">
-          <div id="profile-pic">
-            <img src="{{ user.profile_pic_url }}">
-          </div>
-        </div>
-        <div class="col-md-3">
-          <h1 id="realname">{{ user.real_name }}</h2>
-          <h2 id="username">{{ user.user_name }}</h2>
-
-          <div id="user_location"><span class="glyphicon glyphicon-map-marker glyphicon-user-personal-info"></span>{{ user.location }}</div>
-          <div id="user_email"><span class="glyphicon glyphicon-envelope glyphicon-user-personal-info"></span>{{ user.email }}</div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="row hidden" id="general-user-info">
-      <div class="col-md-4 text-center general-info-datum">
-        <div class="row general-info-datum-title">Pull Requests</div>
-        <div class="row general-info-datum-number" id="number_pull_requests">{{ user.number_pull_requests }}</div>
-      </div>
-      <div class="col-md-4 text-center general-info-datum" >
-        <div class="row general-info-datum-title">Issues Created</div>
-        <div class="row general-info-datum-number" id="number_issues">{{ user.number_issues_created }}</div>
-      </div>
-      <div class="col-md-4 text-center general-info-datum">
-        <div class="row general-info-datum-title">Repositories Number</div>
-        <div class="row general-info-datum-number" id="number_repos">{{ user.number_repos }}</div>
-      </div>
-    </div>
-
-    <div id="progamming-languages-info">
-      <h3>Programming Languages</h3>
-      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
-        {% for language in user.languages %}
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab">
-            <h4 class="panel-title">
-              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ language.name }}" aria-expanded="true">
-                {{ language.name }}
-              </a>
-            </h4>
-          </div>
-          <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel">
-            <div class="panel-body">
-
-              <div class="row programming-language-info">
-                <div class="col-md-4 text-center programming-language-info-datum">
-                  <div class="row programming-language-info-title programming-language-info-title-additions">Total Additions</div>
-                  <div class="row programming-language-info-number">{{ language.additions }}</div>
-                </div>
-                <div class="col-md-4 text-center programming-language-info-datum">
-                  <div class="row programming-language-info-title programming-language-info-title-deletions">Total Deletions</div>
-                  <div class="row programming-language-info-number">{{ language.deletions }}</div>
-                </div>
-                <div class="col-md-4 text-center programming-language-info-datum">
-                  <div class="row programming-language-info-title programming-language-info-title-commits">Number Commits</div>
-                  <div class="row programming-language-info-number">{{ language.commits_number }}</div>
-                </div>
-              </div>
-
-              <div class="row programming-language-info-repo-list">
-                <div class="col-md-12 text-center programming-language-info">
-                  <div class="row programming-language-info-title">Examples of Repositories</div>
-                  <ul class="language-repo-list">
-                    {% for repo in languages.repos %}
-                      <li><a href="{{ repo.url }}">{{ repo.name }}</a></li>
-                    {% endfor %}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-
-      </div>
-    </div>
+  </div>
 
 
 

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>GitHub User  Profiler</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/stylesheet.css" type="text/css">
+  </head>
+  <body>
+  <nav class="navbar navbar-default navbar-inverse"">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">GitHub User  Profiler</a>
+      </div>
+
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div class="container">
+
+    <form>
+      <div class="form-group">
+        <label for="user-profile-url-input">User Profile</label>
+        <input type="text" class="form-control" id="user-profile-url-input" placeholder="Enter user profile">
+      </div>
+        <button id="submit-profile-user" type="submit" class="btn btn-primary">Profile this dev! </button>
+    </form>
+
+    <div id="personal-user-info">
+      <div class="row">
+        <div class="col-md-3">
+          <div id="profile-pic">
+            <img src="{{ user.avatar_url }}">
+          </div>
+        </div>
+        <div class="col-md-3">
+          <h1 id="realname">{{ user.name }}</h2>
+          <h2 id="username">{{ user.username }}</h2>
+            {% if user.location is not none %}
+              <div id="user_location"><span class="glyphicon glyphicon-map-marker glyphicon-user-personal-info"></span>{{ user.location }}</div>
+            {% endif %}
+            {% if user.email is not none %}
+              <div id="user_email"><span class="glyphicon glyphicon-envelope glyphicon-user-personal-info"></span>
+              {{ user.email }}</div>
+            {% endif %}
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row" id="general-user-info">
+      <div class="col-md-4 text-center general-info-datum">
+        <div class="row general-info-datum-title">Pull Requests</div>
+        <div class="row general-info-datum-number" id="number_pull_requests">{{ user.pull_request }}</div>
+      </div>
+      <div class="col-md-4 text-center general-info-datum" >
+        <div class="row general-info-datum-title">Issues Created</div>
+        <div class="row general-info-datum-number" id="number_issues">{{ user.issues }}</div>
+      </div>
+      <div class="col-md-4 text-center general-info-datum">
+        <div class="row general-info-datum-title">Repositories Number</div>
+        <div class="row general-info-datum-number" id="number_repos">{{ user.number_repos }}</div>
+      </div>
+    </div>
+
+    <div id="progamming-languages-info">
+      <h3>Programming Languages</h3>
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+        {% for language in user.languages %}
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ language.safe_name }}" aria-expanded="true">
+                {{ language.name }}
+              </a>
+            </h4>
+          </div>
+          <div id="collapse{{ language.safe_name }}" class="panel-collapse collapse" role="tabpanel">
+            <div class="panel-body">
+
+              <div class="row programming-language-info">
+                <div class="col-md-4 text-center programming-language-info-datum">
+                  <div class="row programming-language-info-title programming-language-info-title-additions">Total Additions</div>
+                  <div class="row programming-language-info-number">{{ language.additions }}</div>
+                </div>
+                <div class="col-md-4 text-center programming-language-info-datum">
+                  <div class="row programming-language-info-title programming-language-info-title-deletions">Total Deletions</div>
+                  <div class="row programming-language-info-number">{{ language.deletions }}</div>
+                </div>
+                <div class="col-md-4 text-center programming-language-info-datum">
+                  <div class="row programming-language-info-title programming-language-info-title-commits">Number Commits</div>
+                  <div class="row programming-language-info-number">{{ language.commits_number }}</div>
+                </div>
+              </div>
+
+              <div class="row programming-language-info-repo-list">
+                <div class="col-md-12 text-center programming-language-info">
+                  <div class="row programming-language-info-title">Examples of Repositories</div>
+                  <ul class="language-repo-list">
+                    {% for repo in language.repositories %}
+                      {% for name, url in repo.items() %}
+                      <li><a href="{{ url }}">{{ name }}</a></li>
+                      {% endfor %}
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+
+
+
+  </body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="static/js/main.js"></script>
+  </body>
+</html>

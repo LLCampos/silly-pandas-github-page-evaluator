@@ -1,3 +1,6 @@
+import os
+
+
 class FilenameToLanguage:
 
     def __init__(self, filename):
@@ -228,14 +231,10 @@ class FilenameToLanguage:
             ("yml", "YAML")])
         self.language = self.get_language()
 
-    # code snippet addpated from https://stackoverflow.com/questions/37896386/fixed-how-to-get-file-extension-correctly
     @staticmethod
     def file_extension(filename):
-        if len(filename.split('.')) > 2:
-            text = filename.split('.')[0] , '.'.join(filename.split('.')[-2:])
-        else:
-            text = filename.split('.')
-        return text[1]
+        _ , file_extension = os.path.splitext(filename)
+        return file_extension
 
     def language(self):
         file_extension = self.get_file_extension(self.filename)
